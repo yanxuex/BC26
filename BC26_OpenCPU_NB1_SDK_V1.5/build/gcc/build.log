@@ -1,0 +1,654 @@
+custom/config/custom_sys_cfg.c:77:1: warning: "/*" within comment [-Wcomment]
+ /* There is a hardware watchdog inside the module, so customers do not need to add an external watchdog.  */
+ ^
+ril/src/ril_atResponse.c: In function 'Ql_RIL_AT_SetErrCode':
+ril/src/ril_atResponse.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ s32 Ql_RIL_AT_SetErrCode(s32 errCode) {m_iErrCode = errCode;}
+ ^
+ril/src/ril_dfota.c: In function 'RIL_DFOTA_Upgrade':
+ril/src/ril_dfota.c:65:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(strAT,"AT+QFOTADL=\"%s\"\n",url);
+     ^
+ril/src/ril_dfota.c:65:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_dfota.c:67:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), NULL,NULL,0);
+     ^
+In file included from ril/src/ril_dfota.c:38:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_dfota.c:67:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), NULL,NULL,0);
+     ^
+In file included from ril/src/ril_dfota.c:36:0:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_dfota.c: In function 'DFOTA_Analysis':
+ril/src/ril_dfota.c:84:2: warning: implicit declaration of function 'QSDK_Get_Str' [-Wimplicit-function-declaration]
+  QSDK_Get_Str(buffer,strTmp,1);
+  ^
+ril/src/ril_dfota.c:98:3: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+   *dfota_errno = Ql_atoi(strTmp);
+   ^
+In file included from ril/src/ril_dfota.c:38:0:
+include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 'u8 *'
+ s32    Ql_atoi(const char* s);
+        ^
+ril/src/ril_dfota.c:120:3: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+   *dfota_errno = Ql_atoi(strTmp);
+   ^
+In file included from ril/src/ril_dfota.c:38:0:
+include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 'u8 *'
+ s32    Ql_atoi(const char* s);
+        ^
+ril/src/ril_lwm2m.c: In function 'RIL_QLwM2M_Send':
+ril/src/ril_lwm2m.c:326:4: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+    lwm2m_send_param_t->ins_id,lwm2m_send_param_t->res_id,lwm2m_send_param_t->send_length,lwm2m_send_param_t->buffer,"0x0000");
+    ^
+ril/src/ril_lwm2m.c:326:4: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_lwm2m.c:328:7: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+  }
+       ^
+In file included from ril/src/ril_lwm2m.c:37:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_lwm2m.c:328:7: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+  }
+       ^
+In file included from ril/src/ril_lwm2m.c:35:0:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_lwm2m.c:332:4: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+    lwm2m_send_param_t->ins_id,lwm2m_send_param_t->res_id,lwm2m_send_param_t->send_length,lwm2m_send_param_t->buffer,"0x0100");
+    ^
+ril/src/ril_lwm2m.c:332:4: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_lwm2m.c:334:7: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+  }
+       ^
+In file included from ril/src/ril_lwm2m.c:37:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_lwm2m.c:334:7: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+  }
+       ^
+In file included from ril/src/ril_lwm2m.c:35:0:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_lwm2m.c: At top level:
+ril/src/ril_lwm2m.c:81:12: warning: 'ATResponse_Open_Handler' defined but not used [-Wunused-function]
+ static s32 ATResponse_Open_Handler(char* line, u32 len, void* userData)
+            ^
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTSUB':
+ril/src/ril_mqtt.c:139:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+   if(Ql_strlen(mqtt_topic_info_t->topic[i]) > 255)//Maximum length is 255 bytes.
+   ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:166:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(temp_buffer, "\"%s\",%d",mqtt_topic_info_t->topic[i],mqtt_topic_info_t->qos[i]);
+     ^
+ril/src/ril_mqtt.c:166:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:170:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+           Ql_sprintf(temp_buffer, ",\"%s\",%d",mqtt_topic_info_t->topic[i],mqtt_topic_info_t->qos[i]);
+           ^
+ril/src/ril_mqtt.c:170:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:172:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+   if(Ql_strlen(info) + Ql_strlen(temp_buffer) > RIL_MQTT_INFO_MAX)
+   ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:172:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+   if(Ql_strlen(info) + Ql_strlen(temp_buffer) > RIL_MQTT_INFO_MAX)
+   ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:188:4: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:188:4: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:48:7: note: expected 'char *' but argument is of type 'u8 *'
+ char* Ql_strncat(char* s1, const char* s2, u32 size);
+       ^
+ril/src/ril_mqtt.c:188:4: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:48:7: note: expected 'const char *' but argument is of type 'u8 *'
+ char* Ql_strncat(char* s1, const char* s2, u32 size);
+       ^
+ril/src/ril_mqtt.c:193:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(strAT, "AT+QMTSUB=%d,%d,%s\r\n", connectID,msgId,info);
+     ^
+ril/src/ril_mqtt.c:193:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:194:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:194:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTPUB':
+ril/src/ril_mqtt.c:225:2: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+  Ql_sprintf(strAT, "AT+QMTPUB=%d,%d,%d,%d,\"%s\",\"%s\"\n", connectID,msgId,qos,retain,topic,message);
+  ^
+ril/src/ril_mqtt.c:225:2: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:226:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:226:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTUNS':
+ril/src/ril_mqtt.c:276:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(temp_buffer, "\"%s\"",mqtt_topic_info_t->topic[i]);
+     ^
+ril/src/ril_mqtt.c:276:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:280:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+           Ql_sprintf(temp_buffer, ",\"%s\"",mqtt_topic_info_t->topic[i]);
+           ^
+ril/src/ril_mqtt.c:280:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:282:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+   if(Ql_strlen(info) + Ql_strlen(temp_buffer) > RIL_MQTT_INFO_MAX)
+   ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:282:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+   if(Ql_strlen(info) + Ql_strlen(temp_buffer) > RIL_MQTT_INFO_MAX)
+   ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:298:4: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:298:4: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:48:7: note: expected 'char *' but argument is of type 'u8 *'
+ char* Ql_strncat(char* s1, const char* s2, u32 size);
+       ^
+ril/src/ril_mqtt.c:298:4: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+    Ql_strncat(info,temp_buffer,Ql_strlen(temp_buffer));
+    ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:48:7: note: expected 'const char *' but argument is of type 'u8 *'
+ char* Ql_strncat(char* s1, const char* s2, u32 size);
+       ^
+ril/src/ril_mqtt.c:303:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(strAT, "AT+QMTUNS=%d,%d,%s\r\n", connectID,msgId,info);
+     ^
+ril/src/ril_mqtt.c:303:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:305:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/src/ril_mqtt.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_mqtt.c:305:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATResponse_Handler,NULL,0);
+     ^
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_onenet.c: In function 'ATResponse_Create_Handler':
+ril/src/ril_onenet.c:88:5: warning: pointer targets in passing argument 3 of 'Ql_RIL_FindString' differ in signedness [-Wpointer-sign]
+     char *head = Ql_RIL_FindString(line, len, onenet_param->prefix); //continue wait
+     ^
+In file included from ril/src/ril_onenet.c:37:0:
+ril/inc/ril_util.h:69:14: note: expected 'char *' but argument is of type 'u8 *'
+ extern char* Ql_RIL_FindString(char *line, u32 len,char *str);
+              ^
+ril/src/ril_onenet.c: In function 'RIL_QONENET_Create':
+ril/src/ril_onenet.c:141:22: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+  onenet_param.prefix ="+MIPLCREATE:";
+                      ^
+ril/src/ril_onenet.c: In function 'RIL_QONENET_Notify':
+ril/src/ril_onenet.c:298:2: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+  Ql_sprintf(strAT,"AT+MIPLNOTIFY=%d,%d,%d,%d,%d,%d,%d,\"%s\",%d,%d\n",onenet_notify_param_t->ref,\
+  ^
+ril/src/ril_onenet.c:298:2: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_onenet.c:305:2: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+  Ql_sprintf(strAT,"AT+MIPLNOTIFY=%d,%d,%d,%d,%d,%d,%d,\"%s\",%d,%d,%d\n",onenet_notify_param_t->ref,\
+  ^
+ril/src/ril_onenet.c:305:2: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_onenet.c:311:2: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+  ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), ATResponse_Handler,NULL,0);
+  ^
+In file included from ril/src/ril_onenet.c:38:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_onenet.c:311:2: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+  ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), ATResponse_Handler,NULL,0);
+  ^
+In file included from ril/src/ril_onenet.c:36:0:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_onenet.c: In function 'RIL_QONENET_Read_Rsp':
+ril/src/ril_onenet.c:376:2: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+  Ql_sprintf(strAT,"AT+MIPLREADRSP=%d,%d,%d,%d,%d,%d,%d,%d,\"%s\",%d,%d\n",onenet_read_param_t->ref,\
+  ^
+ril/src/ril_onenet.c:376:2: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_onenet.c:381:2: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+  ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), ATResponse_Handler,NULL,0);
+  ^
+In file included from ril/src/ril_onenet.c:38:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_onenet.c:381:2: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+  ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT), ATResponse_Handler,NULL,0);
+  ^
+In file included from ril/src/ril_onenet.c:36:0:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_socket.c: In function 'RIL_SOC_QISEND':
+ril/src/ril_socket.c:176:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(strAT, "AT+QISEND=%d,%d,\"%s\"\n",connectID,send_length, send_buffer);
+     ^
+ril/src/ril_socket.c:176:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_socket.c:177:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATRsp_Soc_Qisend_Handler,0,30*1000);
+     ^
+In file included from ril/src/ril_socket.c:34:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_socket.c:177:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATRsp_Soc_Qisend_Handler,0,30*1000);
+     ^
+In file included from ril/inc/ril_socket.h:36:0,
+                 from ril/src/ril_socket.c:38:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_socket.c: In function 'RIL_SOC_QISENDEX':
+ril/src/ril_socket.c:204:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+     Ql_sprintf(strAT, "AT+QISENDEX=%d,%d,\"%s\"\n",connectID,send_length, send_hex_buffer);
+     ^
+ril/src/ril_socket.c:204:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_socket.c:205:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATRsp_Soc_Qisend_Handler,0,30*1000);
+     ^
+In file included from ril/src/ril_socket.c:34:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ u32   Ql_strlen(const char* str);
+       ^
+ril/src/ril_socket.c:205:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+     ret = Ql_RIL_SendATCmd(strAT,Ql_strlen(strAT),ATRsp_Soc_Qisend_Handler,0,30*1000);
+     ^
+In file included from ril/inc/ril_socket.h:36:0,
+                 from ril/src/ril_socket.c:38:
+ril/inc/ril.h:236:12: note: expected 'char *' but argument is of type 'u8 *'
+ extern s32 Ql_RIL_SendATCmd(char*  atCmd, u32 atCmdLen, Callback_ATResponse atRsp_callBack, void* userData, u32 timeOut);
+            ^
+ril/src/ril_urc.c: In function 'OnURCHandler_QIURC_OPEN':
+ril/src/ril_urc.c:214:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_SOCKET_OPEN, &socket_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Socket_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_SOCKET_QIURC':
+ril/src/ril_urc.c:225:8: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+     p1 = Ql_strstr(strURC, "+QIURC:");
+        ^
+ril/src/ril_urc.c:228:2: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+  p2 = Ql_strstr(p1, "\r\n");
+  ^
+In file included from ril/src/ril_urc.c:34:0:
+include/ql_stdlib.h:53:7: note: expected 'const char *' but argument is of type 'u8 *'
+ char* Ql_strstr(const char* s1, const char* s2);
+       ^
+ril/src/ril_urc.c:234:6: warning: pointer targets in passing argument 1 of 'QSDK_Get_Str' differ in signedness [-Wpointer-sign]
+      ret = QSDK_Get_Str(p1,strTmp,0);
+      ^
+In file included from ril/src/ril_urc.c:44:0:
+ril/inc/ril_system.h:122:6: note: expected 'char *' but argument is of type 'u8 *'
+ bool QSDK_Get_Str(char *src_string,  char *dest_string, unsigned char index);
+      ^
+ril/src/ril_urc.c:238:7: warning: pointer targets in passing argument 1 of 'QSDK_Get_Str' differ in signedness [-Wpointer-sign]
+       QSDK_Get_Str(p1,strTmp,1);
+       ^
+In file included from ril/src/ril_urc.c:44:0:
+ril/inc/ril_system.h:122:6: note: expected 'char *' but argument is of type 'u8 *'
+ bool QSDK_Get_Str(char *src_string,  char *dest_string, unsigned char index);
+      ^
+ril/src/ril_urc.c:223:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     s32 ret;
+         ^
+ril/src/ril_urc.c: In function 'OnURCHandler_LwM2M_OBSERVE':
+ril/src/ril_urc.c:274:11: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+           Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_LwM2M_OBSERVE, &lwm2m_urc_param);
+           ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Lwm2m_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:250:9: warning: unused variable 'res_id' [-Wunused-variable]
+     s32 res_id;
+         ^
+ril/src/ril_urc.c: At top level:
+ril/src/ril_urc.c:280:1: warning: return type defaults to 'int' [enabled by default]
+ OnURCHandler_ONENET_EVENT(const char* strURC, void* reserved)
+ ^
+ril/src/ril_urc.c:280:1: warning: conflicting types for 'OnURCHandler_ONENET_EVENT' [enabled by default]
+ril/src/ril_urc.c:112:13: note: previous declaration of 'OnURCHandler_ONENET_EVENT' was here
+ static void OnURCHandler_ONENET_EVENT(const char* strURC, void* reserved);
+             ^
+ril/src/ril_urc.c: In function 'OnURCHandler_ONENET_EVENT':
+ril/src/ril_urc.c:305:4: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+    Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_EVENT, &onenet_urc_param);
+    ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:312:4: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+    Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_EVENT, &onenet_urc_param);
+    ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:321:5: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+     Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_EVENT, &onenet_urc_param);
+     ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:325:5: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+     Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_EVENT, &onenet_urc_param);
+     ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:330:4: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+    Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_EVENT, &onenet_urc_param);
+    ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:283:11: warning: unused variable 'p2' [-Wunused-variable]
+     char* p2 = NULL;
+           ^
+ril/src/ril_urc.c: At top level:
+ril/src/ril_urc.c:336:1: warning: return type defaults to 'int' [enabled by default]
+ OnURCHandler_ONENET_OBSERVER(const char* strURC, void* reserved)
+ ^
+ril/src/ril_urc.c:336:1: warning: conflicting types for 'OnURCHandler_ONENET_OBSERVER' [enabled by default]
+ril/src/ril_urc.c:113:13: note: previous declaration of 'OnURCHandler_ONENET_OBSERVER' was here
+ static void OnURCHandler_ONENET_OBSERVER(const char* strURC, void* reserved);
+             ^
+ril/src/ril_urc.c: In function 'OnURCHandler_ONENET_OBSERVER':
+ril/src/ril_urc.c:373:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_OBSERVE, &onenet_urc_param);
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_ONENET_DISCOVER':
+ril/src/ril_urc.c:402:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_DISCOVER, &onenet_urc_param);
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_ONENET_READ':
+ril/src/ril_urc.c:449:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_ONENET_READ, &onenet_urc_param);
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct Onenet_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c:414:6: warning: unused variable 'ret' [-Wunused-variable]
+  s32 ret;
+      ^
+ril/src/ril_urc.c: In function 'OnURCHandler_DFOTA_Hander':
+ril/src/ril_urc.c:566:3: warning: passing argument 1 of 'DFOTA_Analysis' discards 'const' qualifier from pointer target type [enabled by default]
+   DFOTA_Analysis(strURC,&upgrade_state,&dfota_errno);
+   ^
+In file included from ril/src/ril_urc.c:45:0:
+ril/inc/ril_dfota.h:101:6: note: expected 'u8 *' but argument is of type 'const char *'
+ void DFOTA_Analysis(u8* buffer,Dfota_Upgrade_State* upgrade_state, s32* errno);
+      ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_OPEN':
+ril/src/ril_urc.c:600:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_OPEN, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CONN':
+ril/src/ril_urc.c:637:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_CONN, &mqtt_urc_param);
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_SUB':
+ril/src/ril_urc.c:673:10: warning: array subscript has type 'char' [-Wchar-subscripts]
+          mqtt_urc_param.sub_value[i]= Ql_atoi(strTmp);
+          ^
+ril/src/ril_urc.c:677:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+         mqtt_urc_param.sub_value[i]= 255;
+         ^
+ril/src/ril_urc.c:682:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_SUB, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_PUB':
+ril/src/ril_urc.c:724:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_PUB, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_TUNS':
+ril/src/ril_urc.c:754:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_TUNS, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_STATE':
+ril/src/ril_urc.c:780:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_STATE, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CLOSE':
+ril/src/ril_urc.c:809:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_CLOSE, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_DISC':
+ril/src/ril_urc.c:839:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+   Ql_OS_SendMessage(URC_RCV_TASK_ID, MSG_ID_URC_INDICATION, URC_MQTT_DISC, &mqtt_urc_param); 
+   ^
+In file included from ril/src/ril_urc.c:37:0:
+include/ql_system.h:215:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ s32 Ql_OS_SendMessage(s32 destTaskId, u32 msgId, u32 param1, u32 param2);
+     ^
+ril/src/ril_urc.c: At top level:
+ril/src/ril_urc.c:504:13: warning: 'OnURCHandler_InitStat' defined but not used [-Wunused-function]
+ static void OnURCHandler_InitStat(const char* strURC, void* reserved)
+             ^
+example/utility.c: In function 'Check_Separator':
+example/utility.c:45:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     while (pChar1 = Ql_strstr(pConnCfg, "<"))
+     ^
+example/utility.c:52:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     while (pChar1 = Ql_strstr(pConnCfg, ">"))
+     ^
+example/utility.c:59:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     while (pChar1 = Ql_strstr(pConnCfg, ">,<"))
+     ^
+example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
+     char* pChar2;
+           ^
+example/utility.c: In function 'Analyse_Command':
+example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (q = (u8*)Ql_strstr((char*)src_str,"\r\n"))//remove\r\n
+     ^
+example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+                 if (p[i+1] = (u8*)Ql_strstr((char*)p[i],">"))
+                 ^
+custom/main.c: In function 'CallBack_UART_Hdlr':
+custom/main.c:169:25: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+                     s32 ret;
+                         ^
+sdk_lib/src/lib_ril_sms.c:680:13: warning: backslash and newline separated by space [enabled by default]
+         }   \    
+ ^
+sdk_lib/src/ql_urc_register.c: In function 'Ql_RIL_Protocol_Handle':
+sdk_lib/src/ql_urc_register.c:34:3: warning: implicit declaration of function 'Ql_strstr' [-Wimplicit-function-declaration]
+   if (Ql_strstr(strURC, m_SysPROTOCOLEntry[i].keyword))
+   ^
+sdk_lib/src/ql_urc_register.c:38:7: warning: pointer targets in passing argument 1 of 'm_SysPROTOCOLEntry[(int)i].handler' differ in signedness [-Wpointer-sign]
+       m_SysPROTOCOLEntry[i].handler(strURC, length);
+       ^
+sdk_lib/src/ql_urc_register.c:38:7: note: expected 'const char *' but argument is of type 'const u8 *'
+sdk_lib/src/ql_urc_register.c: In function 'Ql_Mqtt_Recv_Register':
+sdk_lib/src/ql_urc_register.c:54:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[0].handler = callback_mqtt_recv;  //0---->mqtt recv
+                                  ^
+sdk_lib/src/ql_urc_register.c: In function 'Ql_Lwm2m_Write_Req_Register':
+sdk_lib/src/ql_urc_register.c:65:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[1].handler = callback_lwm2m_write_req;  //1---->lwm2m write
+                                  ^
+sdk_lib/src/ql_urc_register.c: In function 'Ql_Socket_Recv_Register':
+sdk_lib/src/ql_urc_register.c:76:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[2].handler = callback_socket_recv;  //2---->tcp recv
+                                  ^
+sdk_lib/src/ql_urc_register.c: In function 'Ql_Onenet_Req_Register':
+sdk_lib/src/ql_urc_register.c:87:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[3].handler = callback_onenet_req;  //3---->onenet wrtie
+                                  ^
+sdk_lib/src/ql_urc_register.c:89:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[5].handler = callback_onenet_req;  //3---->onenet execute
+                                  ^
+sdk_lib/src/ql_urc_register.c:91:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[6].handler = callback_onenet_req;  //3---->onenet parameter
+                                  ^
+sdk_lib/src/ql_urc_register.c: In function 'Ql_Lwm2m_Recv_Register':
+sdk_lib/src/ql_urc_register.c:103:34: warning: assignment from incompatible pointer type [enabled by default]
+    m_SysPROTOCOLEntry[4].handler = callback_lwm2m_recv;  //4---->lwm2m recv
+                                  ^
+sdk_lib/src/ril_main.c: In function 'proc_reserved1':
+sdk_lib/src/ril_main.c:179:13: warning: implicit declaration of function 'Ql_ril_request_command' [-Wimplicit-function-declaration]
+             ret = Ql_ril_request_command(m_strATCmd, NULL, NULL);
+             ^
+sdk_lib/src/ril_main.c:198:4: warning: implicit declaration of function 'Ql_RIL_Protocol_Handle' [-Wimplicit-function-declaration]
+    flag = Ql_RIL_Protocol_Handle((char*)msg.param2,(msg.param1-1));//cut \0
+    ^
+sdk_lib/src/ril_main.c:201:7: warning: passing argument 1 of 'Ql_MEM_Free' makes pointer from integer without a cast [enabled by default]
+       Ql_MEM_Free(msg.param2); // free msg buf which alloc in resp/urc dispatch
+       ^
+In file included from include/ql_system.h:39:0,
+                 from sdk_lib/src/ril_main.c:7:
+include/ql_memory.h:64:6: note: expected 'void *' but argument is of type 'u32'
+ void Ql_MEM_Free (void *ptr);
+      ^
+sdk_lib/src/ril_main.c:327:13: warning: passing argument 1 of 'Ql_MEM_Free' makes pointer from integer without a cast [enabled by default]
+             Ql_MEM_Free(msg.param2); // free msg buf which alloc in resp/urc dispatch
+             ^
+In file included from include/ql_system.h:39:0,
+                 from sdk_lib/src/ril_main.c:7:
+include/ql_memory.h:64:6: note: expected 'void *' but argument is of type 'u32'
+ void Ql_MEM_Free (void *ptr);
+      ^
+sdk_lib/src/ril_main.c: In function 'str_seacher_with':
+sdk_lib/src/ril_main.c:570:20: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+   char* temp_src = line;
+                    ^
+sdk_lib/src/ril_main.c: At top level:
+sdk_lib/src/ril_main.c:31:14: warning: 'm_RxBuf_VirtualPort1' defined but not used [-Wunused-variable]
+ static u8    m_RxBuf_VirtualPort1[SERIAL_RX_BUFFER_LEN];// AT response buffer
+              ^
+sdk_lib/src/system.c: In function 'Ql_GetvFunc_Init_Status':
+sdk_lib/src/system.c:71:13: warning: 'return' with a value, in function returning void [enabled by default]
+             return 0;
+             ^
+sdk_lib/src/system.c:73:31: warning: assignment from incompatible pointer type [enabled by default]
+         m_GetvFunc_Init_Status=(_api_OS_CreateEvent_t)ptr;
+                               ^
+sdk_lib/src/taskMngt.c: In function 'Ql_OS_TakeMutex':
+sdk_lib/src/taskMngt.c:102:13: warning: 'return' with no value, in function returning non-void [enabled by default]
+             return;
+             ^
+sdk_lib/src/taskMngt.c: In function 'Ql_OS_GiveMutex':
+sdk_lib/src/taskMngt.c:117:13: warning: 'return' with no value, in function returning non-void [enabled by default]
+             return ;
+             ^
+sdk_lib/src/taskMngt.c: In function 'Ql_OS_GiveSemaphore':
+sdk_lib/src/taskMngt.c:163:13: warning: 'return' with no value, in function returning non-void [enabled by default]
+             return;
+             ^
